@@ -8,7 +8,7 @@ function checkInFrame() {
 
 		window.onload = function() {
 			if (!checkInFrame()) {
-				document.body.innerHTML = "<div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;'>DENIED</div>";
+				window.location.href = "denied.html";
 			}
 		};
 
