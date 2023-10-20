@@ -116,6 +116,14 @@
 		.btn-download:hover {
 			background-color: #0066cc;
 		}
+
+		.card.dark-mode {
+			background-color: #444;
+		}
+		.btn-download.disabled {
+			background-color: #777;
+			cursor: not-allowed;
+		}
 	</style>
 </head>
 <body>
@@ -123,13 +131,34 @@
 		<div class="card">
 			<h2>EZWIN</h2>
 			<p>Welcome to your dashboard. This platform ensures that you download the latest version of EZWIN Loader so that you always have access to the most up-to-date software.</p>
-			<a class="btn-download" onclick="downloadFile(event)">Download</a>
+			<a class="btn-download" onclick="downloadFile(event); aaaa(event)">Download</a>
 		</div>
 		<div class="status-container">
 			<div class="product-status">Product Status</div>
 			<div class="status status-undetected">Undetected / Working</div>
 			<!--<div class="status status-detected">Detected / Not Working</div>-->
-			<div class="last-update">Last updated on 19 / 10 / 2023</div>
+			<div class="last-update">Last updated on 12 / 10 / 2023</div>
 		</div>
 	</div>
+	<script>
+		function aaaa(event) {
+			const downloadButton = event.target;
+			downloadButton.classList.add('disabled');
+			downloadButton.innerHTML = 'Starting download';
+
+			// Add dark mode to the body and card for better visibility
+			document.body.classList.add('dark-mode');
+			document.querySelector('.card').classList.add('dark-mode');
+
+			setTimeout(() => {
+				// Restore the button and remove the loading effect after 5 seconds
+				downloadButton.classList.remove('disabled');
+				downloadButton.innerHTML = 'Download';
+
+				// Remove dark mode styles
+				document.body.classList.remove('dark-mode');
+				document.querySelector('.card').classList.remove('dark-mode');
+			}, 5000);
+		}
+	</script>
 </body>
