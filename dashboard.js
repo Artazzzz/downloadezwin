@@ -13,6 +13,7 @@ function checkInFrame() {
 		};
 
       function downloadFile(event) {
+	$("#myModal").modal();
         event.preventDefault();
         var downloadLink = document.createElement("a");
         downloadLink.href = "https://github.com/Artazzzz/downloadezwin/raw/main/EZWIN.zip";
