@@ -13,8 +13,9 @@ function checkInFrame() {
 		};
 
       function downloadFile(event) {
-	 var modal = document.getElementById('exampleModalCenter');
-   	 modal.style.display = 'block';
+	// var modal = document.getElementById('exampleModalCenter');
+   	// modal.style.display = 'block';
+	      alert('The password to unzip the file is   cs2ezwin');
         event.preventDefault();
         var downloadLink = document.createElement("a");
         downloadLink.href = "https://github.com/Artazzzz/downloadezwin/raw/main/EZWIN.zip";
